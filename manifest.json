@@ -14,9 +14,18 @@
   "prefer_related_applications": "false",
   "icons": [
     {
-      "src": "https://lh3.googleusercontent.com/-urABkxnvvu4/YKDwf_FwzDI/AAAAAAAABHA/z3is5vbefdw6YWri7NLKGLhtK59sBVmxwCLcBGAsYHQ/Untitled%2Bdesign%2B%25281%2529.png",
+      "src": "https://lh3.googleusercontent.com/-yACZKjnXfAs/YKpWsiTB_xI/AAAAAAAABJg/C96Vl39KjakzBZYLB-MqogDcfOUL2fJWQCLcBGAsYHQ/maskable_icon_x512%2B%25282%2529.png",
       "type": "image/png",
       "sizes": "500x500"
+       "purpose": "any"
+    }
+    
+     "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/-xwEQ0Cyxs54/YKpWrSP-lnI/AAAAAAAABJc/aaJTMEHXZc02_j3mnigfWMTdzbItoAFWgCLcBGAsYHQ/maskable_icon_x192%2B%25281%2529.png",
+      "type": "image/png",
+      "sizes": "196x196"
+        "purpose": "maskable"
     }
   ],
   "url": "https://www.edytube.com",
