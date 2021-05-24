@@ -1,0 +1,70 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Edytube : Platform to find Courses from underrated YT Channels",
+  "short_name": "Edytube",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "https://www.edytube.com/",
+  "background_color": "#2d2d30;",
+  "theme_color": "#2d2d30;",
+  "description": "Edytube is a platform for finding reliable courses from Youtube channels/creators. Discover more courses with more ease and less distraction. I want to make this platform ad-free. We are running programs to help individual creators. You can consider Donating to us. More at https://info.edytube.com",
+  "orientation": "any",
+  "related_applications": [],
+  "prefer_related_applications": "false",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/-JMy80f-Pyr8/YKvPU7ptPHI/AAAAAAAABLk/s9_B5PZIYJAdiz2S1xc9wU1QqQodf8QpgCLcBGAsYHQ/maskable_icon%2B%25283%2529.png",
+      "type": "image/png",
+      "sizes": "500x500",
+      "purpose": "maskable"
+    }
+    
+    {
+      "src": "https://lh3.googleusercontent.com/-MM6oOkliJp4/YKvPU8uGo-I/AAAAAAAABLY/1P9D8UTGRhEur9HYiuUwWFk_qQKxX-kEACLcBGAsYHQ/maskable_icon_x48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "maskable"
+    }
+
+ {
+      "src": "https://lh3.googleusercontent.com/-TA_S4uKV5uw/YKvPVT9jlII/AAAAAAAABLo/dzMHsvaFPoM3Ge9RZFuaZ-9BCniqv3uAACLcBGAsYHQ/maskable_icon_x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "maskable"
+    }
+    
+      {
+      "src": "https://lh3.googleusercontent.com/-hQUeRfV1xRc/YKvPUmZqUpI/AAAAAAAABLQ/cMdHzuYGXbQwlOeU7_TB-uabBxNzyHIRQCLcBGAsYHQ/maskable_icon_x128%2B%25282%2529.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable"
+    }
+
+ {
+      "src": "https://lh3.googleusercontent.com/-8H5DaRgF13k/YKvPUgP4d6I/AAAAAAAABLU/GmeArnUWmDIky5iP93vekny0pUkxWTQFQCLcBGAsYHQ/maskable_icon_x192%2B%25282%2529.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    }
+   
+    
+     {
+      "src": "https://lh3.googleusercontent.com/-xfJyZoRhW_4/YKvPV3vovII/AAAAAAAABLs/XTyupEbvcnwUmAKAP5pyMjcTbDI8rpEDgCLcBGAsYHQ/maskable_icon_x384%2B%25282%2529.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "maskable"
+    }
+   
+    {
+      "src": "https://lh3.googleusercontent.com/-jOJQDFbnw5o/YKvPUybA0rI/AAAAAAAABLg/_ycMTzz3Ex8Mj_6RZMGVEBlmDj7gf2J_ACLcBGAsYHQ/maskable_icon_x96%2B%25281%2529.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "maskable"
+    }
+
+  ],
+
+  "url": "https://www.edytube.com",
+  "screenshots": []
+}
