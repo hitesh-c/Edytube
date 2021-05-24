@@ -19,15 +19,16 @@
       "sizes": "500x500",
       "purpose": "any"
     }
-    
-  "icons": [
+   
     {
       "src": "https://lh3.googleusercontent.com/-xwEQ0Cyxs54/YKpWrSP-lnI/AAAAAAAABJc/aaJTMEHXZc02_j3mnigfWMTdzbItoAFWgCLcBGAsYHQ/maskable_icon_x192%2B%25281%2529.png",
       "type": "image/png",
       "sizes": "196x196",
       "purpose": "maskable"
     }
+
   ],
+
   "url": "https://www.edytube.com",
   "screenshots": []
 }
