@@ -1,47 +1,74 @@
-// This is the "Offline page" service worker
+
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "pwabuilder-page";
-
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
+self.addEventListener("install", function(e) {
+    console.log("Alloy service worker installation");
+    e.waitUntil(
+        caches.open(cacheName).then(function(cache) {
+            console.log("Alloy service worker caching dependencies");
+            initialCache.map(function(url) {
+                return cache.add(url).catch(function(reason) {
+                    return console.log(
+                        "Alloy: " + String(reason) + " " + url
+                    );
+                });
+            });
+        })
+    );
 });
 
-self.addEventListener('install', async (event) => {
-  event.waitUntil(
-    caches.open(CACHE)
-      .then((cache) => cache.add(offlineFallbackPage))
-  );
+self.addEventListener("activate", function(e) {
+    console.log("Alloy service worker activation");
+    e.waitUntil(
+        caches.keys().then(function(keyList) {
+            return Promise.all(
+                keyList.map(function(key) {
+                    if (key !== cacheName) {
+                        console.log("Alloy old cache removed", key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+    return self.clients.claim();
 });
 
-if (workbox.navigationPreload.isSupported()) {
-  workbox.navigationPreload.enable();
-}
+self.addEventListener("fetch", function(e) {
+    if (new URL(e.request.url).origin !== location.origin) return;
 
-self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResp = await event.preloadResponse;
+    if (e.request.mode === "navigate" && navigator.onLine) {
+        e.respondWith(
+            fetch(e.request).then(function(response) {
+                return caches.open(cacheName).then(function(cache) {
+                    cache.put(e.request, response.clone());
+                    return response;
+                });
+            })
+        );
+        return;
+    }
 
-        if (preloadResp) {
-          return preloadResp;
-        }
-
-        const networkResp = await fetch(event.request);
-        return networkResp;
-      } catch (error) {
-
-        const cache = await caches.open(CACHE);
-        const cachedResp = await cache.match(offlineFallbackPage);
-        return cachedResp;
-      }
-    })());
-  }
+    e.respondWith(
+        caches
+            .match(e.request)
+            .then(function(response) {
+                return (
+                    response ||
+                    fetch(e.request).then(function(response) {
+                        return caches.open(cacheName).then(function(cache) {
+                            cache.put(e.request, response.clone());
+                            return response;
+                        });
+                    })
+                );
+            })
+            .catch(function() {
+                return caches.match(offlinePage);
+            })
+    );
 });
+
+
+
